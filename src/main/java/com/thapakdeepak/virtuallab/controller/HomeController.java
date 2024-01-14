@@ -11,4 +11,8 @@ public class HomeController {
         return "andGate";
     }
     
+    @GetMapping("/diode")
+    public String pnDiode(){
+        return "pnDiode";
+    }
 }
