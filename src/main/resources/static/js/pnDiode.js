@@ -30,7 +30,10 @@ function setup() {
 }
 
 function update() {
-  console.log("Updating");
+  if (Number(voltageInp.elt.value) > 5.0) voltageInp.elt.value = 5;
+  else if (Number(voltageInp.elt.value) < 0.0) voltageInp.elt.value = 0;
+  if (Number(resistanceInp.elt.value) > 2000) resistanceInp.elt.value = 2000;
+  else if (Number(resistanceInp.elt.value) < 0) resistanceInp.elt.value = 0;
   background(50);
   noStroke(); 
   fill(255);
@@ -85,7 +88,7 @@ function plotGraph(voltage, current) {
   }
   stroke(255);
   fill(255);
-  if (switchOn) {
+  if (switchOn && voltageInp.elt.value > 0) {
     for (let i = 1; i < voltage.length; i++) {
       let p1 = [(i - 1) * (w / voltage.length), 500 - current[i - 1] * 50];
       let p2 = [i * (w / voltage.length), 500 - current[i] * 50];
