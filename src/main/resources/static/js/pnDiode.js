@@ -35,7 +35,7 @@ function update() {
   if (Number(resistanceInp.elt.value) > 2000) resistanceInp.elt.value = 2000;
   else if (Number(resistanceInp.elt.value) < 0) resistanceInp.elt.value = 0;
   background(50);
-  noStroke();
+  noStroke(); 
   fill(255);
   text("PN Junction Diode (Forward Bias)", 350, 50);
   stroke(255, switchOn ? 255 : 50);
