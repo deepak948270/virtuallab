@@ -32,7 +32,7 @@ function setup() {
 function update() {
   console.log("Updating");
   background(50);
-  noStroke();
+  noStroke(); 
   fill(255);
   text("PN Junction Diode (Forward Bias)", 350, 50);
   stroke(255, switchOn ? 255 : 50);
